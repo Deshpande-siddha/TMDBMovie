@@ -1,0 +1,90 @@
+       vote_average      revenue  ...      runtime  release_year
+count   4773.000000  4773.000000  ...  4773.000000   4773.000000
+mean       6.115232    82.777326  ...   107.207207   2002.426357
+std        1.137307   163.237320  ...    21.960616     12.427909
+min        0.000000     0.000000  ...     0.000000   1916.000000
+25%        5.600000     0.000000  ...    94.000000   1999.000000
+50%        6.200000    19.478106  ...   104.000000   2005.000000
+75%        6.800000    93.617009  ...   118.000000   2011.000000
+max       10.000000  2787.965087  ...   338.000000   2017.000000
+
+[8 rows x 6 columns]
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:           vote_average   R-squared:                       0.039
+Model:                            OLS   Adj. R-squared:                  0.039
+Method:                 Least Squares   F-statistic:                     193.9
+Date:                Mon, 01 May 2023   Prob (F-statistic):           3.12e-43
+Time:                        21:48:42   Log-Likelihood:                -7291.1
+No. Observations:                4773   AIC:                         1.459e+04
+Df Residuals:                    4771   BIC:                         1.460e+04
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          6.0013      0.018    331.637      0.000       5.966       6.037
+revenue        0.0014   9.89e-05     13.925      0.000       0.001       0.002
+==============================================================================
+Omnibus:                     1917.512   Durbin-Watson:                   1.833
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            13455.049
+Skew:                          -1.757   Prob(JB):                         0.00
+Kurtosis:                      10.436   Cond. No.                         205.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:           vote_average   R-squared:                       0.182
+Model:                            OLS   Adj. R-squared:                  0.181
+Method:                 Least Squares   F-statistic:                     265.1
+Date:                Mon, 01 May 2023   Prob (F-statistic):          5.01e-206
+Time:                        21:49:20   Log-Likelihood:                -6906.9
+No. Observations:                4773   AIC:                         1.382e+04
+Df Residuals:                    4768   BIC:                         1.386e+04
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          4.2469      0.075     56.558      0.000       4.100       4.394
+revenue        0.0008      0.000      5.391      0.000       0.001       0.001
+budget        -0.0057      0.001    -10.578      0.000      -0.007      -0.005
+popularity     0.0083      0.001     13.446      0.000       0.007       0.009
+runtime        0.0167      0.001     23.549      0.000       0.015       0.018
+==============================================================================
+Omnibus:                     2279.890   Durbin-Watson:                   1.875
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            23239.750
+Skew:                          -2.031   Prob(JB):                         0.00
+Kurtosis:                      13.018   Cond. No.                     1.01e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.01e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+              vote_average   revenue  ...  predicted1  predicted2
+vote_average      1.000000  0.197618  ...    0.197618    0.426561
+revenue           0.197618  1.000000  ...    1.000000    0.463282
+budget            0.083712  0.730321  ...    0.730321    0.196248
+popularity        0.275368  0.644022  ...    0.644022    0.645552
+runtime           0.348373  0.251838  ...    0.251838    0.816702
+release_year     -0.199174  0.092167  ...    0.092167   -0.124401
+predicted1        0.197618  1.000000  ...    1.000000    0.463282
+predicted2        0.426561  0.463282  ...    0.463282    1.000000
+
+[8 rows x 8 columns]
+[('Lagrange multiplier statistic', 128.42403211263232), ('p-value', 8.460643223019223e-27), ('f-value', 32.95918665916203), ('f p-value', 3.754330109366187e-27)]
+       vote_average      revenue  ...  release_year   predicted1
+count   4773.000000  4773.000000  ...   4773.000000  4773.000000
+mean       6.115232    82.777326  ...   2002.426357     6.115232
+std        1.137307   163.237320  ...     12.427909     0.224752
+min        0.000000     0.000000  ...   1916.000000     6.001260
+25%        5.600000     0.000000  ...   1999.000000     6.001260
+50%        6.200000    19.478106  ...   2005.000000     6.028078
+75%        6.800000    93.617009  ...   2011.000000     6.130156
+max       10.000000  2787.965087  ...   2017.000000     9.839851
+
+[8 rows x 7 columns]
+ShapiroResult(statistic=0.8558014631271362, pvalue=0.0)
